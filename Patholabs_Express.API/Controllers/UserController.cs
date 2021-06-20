@@ -46,6 +46,26 @@ namespace Patholabs_Express.API.Controllers
 
         }
 
+        [HttpPut]
+        public IHttpActionResult UpdateUserDetails([FromBody] UserDto obj)
 
+        {
+            var item = userService.UpdateUserDetails(obj);
+            if (item == true)
+            {
+                return Ok(new Responce() { Success = true, Message = "User details updated successfully" });
+            }
+            else
+                return BadRequest();
+        }
+
+
+        [HttpGet]
+        public IHttpActionResult Get()
+        {
+
+            return Ok(new Responce() { Success = true, Message = "User Details Fetched Successfully", Result = userService.getall() });
+
+        }
     }
 }

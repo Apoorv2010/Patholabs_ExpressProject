@@ -77,5 +77,46 @@ namespace Patholabs_Express.BuisnessLogic.Services
 
         }
 
+        public bool UpdateUserDetails(UserDto dto)
+        {
+            var Item = userRepository.UserItem(dto.UserId);
+            Item.Contact_No = dto.Contact_No;
+            Item.Age = dto.Age;
+            Item.Address = dto.Address;
+            return userRepository.Update(Item) == 1;
+        }
+
+        public List<PatientDto> getall()
+        {
+            try
+            {
+                var details = userRepository.Get();
+                var Dtos = new List<PatientDto>();
+                foreach (var item in details)
+                    Dtos.Add(new PatientDto
+                    {
+                        UserId = item.UserId,
+                        Name = item.Name,
+                        Address = item.Address,
+                        Contact_No = item.Contact_No,
+                        Email = item.Email,
+                        Age=item.Age,
+                        Gender=item.Gender,
+
+                    });
+                return Dtos;
+            }
+
+            catch (System.Data.Common.DbException ex)
+            {
+                throw new Patholabs_ExpressException("Error reading data", ex);
+            }
+
+            catch (Exception ex)
+            {
+                throw new Patholabs_ExpressException("Unknown error while reading User Admin data", ex);
+            }
+        }
+
     }
 }

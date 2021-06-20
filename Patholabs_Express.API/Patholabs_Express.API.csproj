@@ -271,6 +271,8 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Appointment_DetailsController.cs" />
+    <Compile Include="Controllers\FeedbackController.cs" />
+    <Compile Include="Controllers\HelpDeskController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\Test_DetailsController.cs" />
     <Compile Include="Controllers\UserController.cs" />

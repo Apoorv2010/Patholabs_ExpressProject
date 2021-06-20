@@ -52,13 +52,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTOs\Appointment_DetailsDto.cs" />
+    <Compile Include="DTOs\FeedbackDto.cs" />
+    <Compile Include="DTOs\HelpDeskDto.cs" />
     <Compile Include="DTOs\LoginDto.cs" />
+    <Compile Include="DTOs\PatientDto.cs" />
     <Compile Include="DTOs\Test_DetailsDto.cs" />
     <Compile Include="DTOs\UserDto.cs" />
     <Compile Include="DTOs\User_AdminDto.cs" />
     <Compile Include="Patholabs_ExpressException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Appointment_DetailsService.cs" />
+    <Compile Include="Services\FeedbackService.cs" />
+    <Compile Include="Services\HelpDeskService.cs" />
     <Compile Include="Services\Test_DetailsService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Services\User_AdminService.cs" />

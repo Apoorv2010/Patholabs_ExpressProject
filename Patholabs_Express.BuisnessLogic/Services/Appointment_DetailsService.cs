@@ -56,5 +56,47 @@ namespace Patholabs_Express.BuisnessLogic.Services
             return Dtos;
         }
 
+        public List<Appointment_DetailsDto> getall()
+        {
+            try
+            {
+                var details = appDetailsRepository.Get();
+                var Dtos = new List<Appointment_DetailsDto>();
+                foreach (var item in details)
+                    Dtos.Add(new Appointment_DetailsDto
+                    {
+                        AppointmentId = item.AppointmentId,
+                        TestId = item.TestId,
+                        CustomerName = item.CustomerName,
+                        App_Book_Time = item.App_Book_Time,
+                        Email = item.Email,
+                        App_Date_Time = item.App_Date_Time,
+                        Status = item.Status,
+                        CreatorUserId = item.CreatorUserId
+                    });
+                return Dtos;
+            }
+
+            catch (System.Data.Common.DbException ex)
+            {
+                throw new Patholabs_ExpressException("Error reading data", ex);
+            }
+
+            catch (Exception ex)
+            {
+                throw new Patholabs_ExpressException("Unknown error while reading User Admin data", ex);
+            }
+        }
+
+        public bool UpdateAppointment(Appointment_DetailsDto dto)
+        {
+            var Item = appDetailsRepository.AppItem(dto.AppointmentId);
+            Item.App_Date_Time = dto.App_Date_Time;
+            Item.CustomerName = dto.CustomerName;
+            
+            return appDetailsRepository.Update(Item) == 1;
+        }
+
+
     }
 }

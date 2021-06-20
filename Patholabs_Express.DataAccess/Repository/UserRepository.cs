@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +31,24 @@ namespace Patholabs_Express.DataAccess.Repository
         {
             return context.Users.Any(item => item.Email == email);
         }
+
+        public int Update(User user)
+        {
+            context.Users.Attach(user);
+            context.Entry(user).State = EntityState.Modified;
+            return context.SaveChanges();
+        }
+
+        public User UserItem(int UserId)
+        {
+            return context.Users.Find(UserId);
+        }
+
+        public List<User> Get()
+        {
+            return context.Users.ToList();
+        }
+
 
     }
 }

@@ -56,6 +56,8 @@
     <Compile Include="Database.cs" />
     <Compile Include="Entities\Application_User.cs" />
     <Compile Include="Entities\Appointment_Details.cs" />
+    <Compile Include="Entities\Feedback.cs" />
+    <Compile Include="Entities\HelpDesk.cs" />
     <Compile Include="Entities\Responce.cs" />
     <Compile Include="Entities\Test_Details.cs" />
     <Compile Include="Entities\User.cs" />
@@ -64,11 +66,21 @@
     <Compile Include="Migrations\202106162006332_UserDb.designer.cs">
       <DependentUpon>202106162006332_UserDb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106171843249_FeedbackDb.cs" />
+    <Compile Include="Migrations\202106171843249_FeedbackDb.designer.cs">
+      <DependentUpon>202106171843249_FeedbackDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106171955500_HelpDeskDb.cs" />
+    <Compile Include="Migrations\202106171955500_HelpDeskDb.designer.cs">
+      <DependentUpon>202106171955500_HelpDeskDb.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Patholabs_ExpressModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Application_UserRepository.cs" />
     <Compile Include="Repository\Appointment_DetailsRepository.cs" />
+    <Compile Include="Repository\FeedbackRepository.cs" />
+    <Compile Include="Repository\HelpDeskRepository.cs" />
     <Compile Include="Repository\Test_DetailsRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Repository\User_AdminRepository.cs" />
@@ -80,6 +92,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202106162006332_UserDb.resx">
       <DependentUpon>202106162006332_UserDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106171843249_FeedbackDb.resx">
+      <DependentUpon>202106171843249_FeedbackDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106171955500_HelpDeskDb.resx">
+      <DependentUpon>202106171955500_HelpDeskDb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

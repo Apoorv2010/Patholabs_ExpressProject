@@ -19,6 +19,8 @@ namespace Patholabs_Express.DataAccess
         public DbSet<Appointment_Details> Appointment_details { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Application_User> application_Users { get; set; }
+        public DbSet<Feedback> feedbacks { get; set; }
+        public DbSet<HelpDesk> helpDesks { get; set; }
 
     }
 }

@@ -53,5 +53,27 @@ namespace Patholabs_Express.API.Controllers
             return NotFound();
         }
 
+
+        [HttpGet]
+        public IHttpActionResult Get()
+        {
+
+            return Ok(new Responce() { Success = true, Message = "Appointment Details Fetched Successfully", Result = appDetailsService.getall() });
+
+        }
+
+        [HttpPut]
+        public IHttpActionResult UpdateAppointmentDetails([FromBody] Appointment_DetailsDto obj)
+
+        {
+            var item = appDetailsService.UpdateAppointment(obj);
+            if (item == true)
+            {
+                return Ok(new Responce() { Success = true, Message = "Appointment updated successfully" });
+            }
+            else
+                return BadRequest();
+        }
+
     }
 }

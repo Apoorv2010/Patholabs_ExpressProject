@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,5 +34,23 @@ namespace Patholabs_Express.DataAccess.Repository
                         select appDetails;
             return Query.ToList();
         }
+
+        public List<Appointment_Details> Get()
+        {
+            return context.Appointment_details.ToList();
+        }
+
+        public int Update(Appointment_Details app)
+        {
+            context.Appointment_details.Attach(app);
+            context.Entry(app).State = EntityState.Modified;
+            return context.SaveChanges();
+        }
+
+        public Appointment_Details AppItem(int appId)
+        {
+            return context.Appointment_details.Find(appId);
+        }
+
     }
 }
