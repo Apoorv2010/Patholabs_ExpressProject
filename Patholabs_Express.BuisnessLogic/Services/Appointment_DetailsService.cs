@@ -30,7 +30,7 @@ namespace Patholabs_Express.BuisnessLogic.Services
 
         public bool Add(Appointment_DetailsDto dto)
         {
-            var user = new Appointment_Details { TestId = dto.TestId, CustomerName = dto.CustomerName, Email = dto.Email, App_Book_Time = Convert.ToDateTime(dto.App_Book_Time), App_Date_Time = Convert.ToDateTime(dto.App_Date_Time), Status = dto.Status, CreatorUserId = dto.CreatorUserId };
+            var user = new Appointment_Details { TestId = dto.TestId, CustomerName = dto.CustomerName, Email = dto.Email, App_Book_Time = DateTime.Now, App_Date_Time = dto.App_Date_Time, Status = dto.Status, CreatorUserId = dto.CreatorUserId };
             return appDetailsRepository.Add(user) == 1;
         }
         public bool Remove(int appointmentId)
@@ -96,6 +96,8 @@ namespace Patholabs_Express.BuisnessLogic.Services
             
             return appDetailsRepository.Update(Item) == 1;
         }
+
+        
 
 
     }

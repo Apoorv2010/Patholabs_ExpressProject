@@ -22,6 +22,7 @@ namespace Patholabs_Express.DataAccess.Entities
         public DateTime App_Date_Time { get; set; }
         public bool Status { get; set; }
         public int CreatorUserId { get; set; }
+        public string FileName { get; set; }
 
     }
 }

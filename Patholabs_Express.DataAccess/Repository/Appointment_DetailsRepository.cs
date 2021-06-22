@@ -52,5 +52,9 @@ namespace Patholabs_Express.DataAccess.Repository
             return context.Appointment_details.Find(appId);
         }
 
+        
+
+      
+
     }
 }

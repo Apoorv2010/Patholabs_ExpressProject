@@ -82,17 +82,23 @@ namespace Patholabs_Express.BuisnessLogic.Services
 
 
 
-        public bool Authenticate(string email, string password, enUserType userType)
+        public UserDto Authenticate(string email, string password, enUserType userType)
         {
             try
             {
+                Application_User application_User = new Application_User();
+                UserDto userDto = new UserDto();
                 bool Succeded = userRepository.ValidateCredentials(email, password, userType);
-                if (Succeded)
+                if (Succeded )
                 {
-                    return Succeded;
+                    application_User = userRepository.GetUserDetailsbyEmailId(email);
+                    userDto.Id = application_User.Id;
+                    userDto.Email = application_User.Email;
+                    userDto.isLogin = Succeded;
+                    return userDto;
                 }
 
-                return false;
+                return null;
             }
             catch (System.Data.Common.DbException ex)
             {

@@ -7,6 +7,7 @@ using System.Web.Http;
 using Patholabs_Express.BuisnessLogic.DTOs;
 using Patholabs_Express.BuisnessLogic.Services;
 using Patholabs_Express.DataAccess.Entities;
+using Patholabs_Express.DataAccess.Repository;
 
 namespace Patholabs_Express.API.Controllers
 {
@@ -19,6 +20,7 @@ namespace Patholabs_Express.API.Controllers
             appDetailsService = new Appointment_DetailsService();
         }
         [HttpPost]
+      // [Route("AppointmentDetails/addAppointment")]
         public IHttpActionResult Add([FromBody] Appointment_DetailsDto obj)
         {
             if (!ModelState.IsValid)
@@ -45,11 +47,11 @@ namespace Patholabs_Express.API.Controllers
 
         //get by id Appointmentdetails
         [HttpGet]
-        public IHttpActionResult Get(int id)
+        public IHttpActionResult Get( int id)
         {
             var Items = appDetailsService.GetAppDetails(id);
             if (Items != null)
-                return Ok(Items);
+                return Ok(new Responce() { Success = true, Message = "Appointment Cancelled Successfully", Result=Items });
             return NotFound();
         }
 
@@ -75,5 +77,7 @@ namespace Patholabs_Express.API.Controllers
                 return BadRequest();
         }
 
+
+        
     }
 }

@@ -26,9 +26,10 @@ namespace Patholabs_Express.API.Controllers
         {
             var user = loginService.Authenticate(loginDto.Email, loginDto.Password, loginDto.UserType);
 
-            if (user == false)
-                return Ok(new Responce() { Success = false }); 
-            return Ok(new Responce() { Success = true});
+            if (user == null)
+                return Ok(new Responce() { Success = false });
+            return Ok(new Responce() { Success = true, Result = user });
+        
 
         }
     }

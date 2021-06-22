@@ -12,7 +12,7 @@ namespace Patholabs_Express.BuisnessLogic.DTOs
     {
   
 
-
+       
         public string Email { get; set; }
       
         public string Password { get; set; }

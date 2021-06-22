@@ -56,8 +56,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application_UserService_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User_AdminService_Should.cs" />
+    <Compile Include="Test_Details_Should.cs" />
+    <Compile Include="UserService_Should.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

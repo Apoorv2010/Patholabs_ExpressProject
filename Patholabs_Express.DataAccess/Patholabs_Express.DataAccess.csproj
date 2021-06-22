@@ -74,6 +74,10 @@
     <Compile Include="Migrations\202106171955500_HelpDeskDb.designer.cs">
       <DependentUpon>202106171955500_HelpDeskDb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106220914409_NewFile.cs" />
+    <Compile Include="Migrations\202106220914409_NewFile.designer.cs">
+      <DependentUpon>202106220914409_NewFile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Patholabs_ExpressModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106171955500_HelpDeskDb.resx">
       <DependentUpon>202106171955500_HelpDeskDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106220914409_NewFile.resx">
+      <DependentUpon>202106220914409_NewFile.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

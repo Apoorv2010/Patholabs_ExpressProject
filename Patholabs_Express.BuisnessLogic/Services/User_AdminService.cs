@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Patholabs_Express.API.Models;
+using Patholabs_Express.BuisnessLogic.DTOs;
 using Patholabs_Express.DataAccess;
 using Patholabs_Express.DataAccess.Entities;
 using Patholabs_Express.DataAccess.Repository;
@@ -92,16 +93,34 @@ namespace Patholabs_Express.BuisnessLogic
         }
 
 
-        public bool Authenticate(string email, string password, enUserType userType)
+        public UserDto Authenticate(string email, string password, enUserType userType)
         {
-           
-            bool Succeded = application_UserRepository.ValidateCredentials(email, password, userType);
-            if (Succeded)
+
+            try
             {
-                return Succeded;
+                Application_User application_User = new Application_User();
+                UserDto userDto = new UserDto();
+                bool Succeded = application_UserRepository.ValidateCredentials(email, password, userType);
+                if (Succeded)
+                {
+                    application_User = application_UserRepository.GetUserDetailsbyEmailId(email);
+                    userDto.Id = application_User.Id;
+                    userDto.Email = application_User.Email;
+                    userDto.isLogin = Succeded;
+                    return userDto;
+                }
+
+                return null;
             }
-                
-            return false;
+            catch (System.Data.Common.DbException ex)
+            {
+                throw new Patholabs_ExpressException("Error reading data", ex);
+            }
+
+            catch (Exception ex)
+            {
+                throw new Patholabs_ExpressException("Unknown error while reading User Admin data", ex);
+            }
         }
 
        

@@ -22,5 +22,6 @@ namespace Patholabs_Express.BuisnessLogic.DTOs
         public string Contact_No { get; set; }
         public string Password { get; set; }
         public enUserType UserType { get; set; }
+        public bool isLogin { get; set; }
     }
 }
