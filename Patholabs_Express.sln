@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31105.61
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patholabs_Express.DataAccess", "Patholabs_Express.DataAccess\Patholabs_Express.DataAccess.csproj", "{F202AE27-44A7-4231-A1E7-2265C6ABFB25}"
 EndProject
@@ -11,7 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patholabs_ExpressBuisnessLo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patholabs_Express.API", "Patholabs_Express.API\Patholabs_Express.API.csproj", "{29D4A785-7728-41F4-BB6D-38EA7D348F88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patholabs_Express.AngularClient", "Patholabs_Express.AngularClient\Patholabs_Express.AngularClient.csproj", "{88B820BD-C68B-4462-8D8E-59C1351D3105}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Patholabs_Express.AngularClient", "Patholabs_Express.AngularClient\Patholabs_Express.AngularClient.csproj", "{88B820BD-C68B-4462-8D8E-59C1351D3105}"
+	ProjectSection(ProjectDependencies) = postProject
+		{29D4A785-7728-41F4-BB6D-38EA7D348F88} = {29D4A785-7728-41F4-BB6D-38EA7D348F88}
+		{8B1A7CBF-A4DF-4F8A-B97F-B8966298A820} = {8B1A7CBF-A4DF-4F8A-B97F-B8966298A820}
+		{F202AE27-44A7-4231-A1E7-2265C6ABFB25} = {F202AE27-44A7-4231-A1E7-2265C6ABFB25}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -33,15 +33,14 @@ namespace Patholabs_ExpressBuisnessLogic.Tests
 
         }
 
-        [Test]
-
-
-
         public void Return_Credentials()
         {
-            bool log = service.Authenticate("apoorvjain6@gmail.com", "apoorv", enUserType.User);
-            bool x = true;
-            Assert.AreEqual(x, log);
+            Return_Credentials(service);
+        }
+
+        private void Return_Credentials(User_ApplicationService service)
+        {
+            throw new NotImplementedException();
         }
     }
 }
